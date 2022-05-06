@@ -19,7 +19,11 @@ double Gdmomentum(double x0, double alpha,double beta, unsigned long int loops){
         i++;
 
     };
-    cout<<"So lan lap:"<<i-1<<endl;
+    
+    cout<<"xmin tinh bang GD with Momentum:"<<x<<endl;
+    double y=pow(x0,2)+10*sin(x0);
+    cout<<"y min tinh bang GD with momentum:"<<y<<endl;
+    cout<<"So lan lap GD with momentum:"<<i-1<<endl;
     return x;
 }
 
@@ -29,7 +33,9 @@ double gradient_descent(double learning_rate, double x0) {
     {
         x0 = temp - learning_rate * derivative(x0);//learning rate 0.001 là hợp lý
         if(abs(derivative(x0)) <=0.00000001) {
-            cout<<x0<<endl;
+            cout<<"Ket qua xmin bang pp Gradient Descent:"<<x0<<endl;
+            double y=pow(x0,2)+10*sin(x0);
+            cout<<"Ket qua ymin bang pp Gradient Descent:"<<y<<endl;
             cout << "So lan lap GD:" <<i<<endl;
 
             break;
@@ -45,8 +51,9 @@ int main() {
 
     xmin=Gdmomentum(5, 0.1, 0.9, 10000);
     gradient_descent(0.05, 5);
-    cout<<"xmin="<<xmin<<endl;
+    
     double ymin=pow(xmin,2)+10*sin(xmin);
-    cout<<ymin;
+    
+    
     return 0;
 }
