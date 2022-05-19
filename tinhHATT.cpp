@@ -1,6 +1,5 @@
 #include<iostream>
 #include <math.h>
-#include <iomanip>
 #include <fstream>
 using namespace std;
 
@@ -30,7 +29,7 @@ int main(){
         pd1 += 0.05 * (w0 + w1 * x[i] - y[i]) * x[i];
     w0 -= alpha * pd0;
     w1 -= alpha * pd1;
-    if (pd0 * pd0 + pd1 * pd1 < 0.0001)
+    if ((pd0 * pd0 + pd1 * pd1) < 0.0001)
           break;
     };
 
