@@ -7,7 +7,7 @@ using namespace std;
 int main(){
     ifstream filein;
     int i;
-    double w0, w1;
+    double w0=0, w1=0;
     double alpha=0.0003;
     double x[18], y[18];
     filein.open("HATT.txt", ios_base::in);
@@ -20,13 +20,16 @@ int main(){
         filein>>y[i];
     }
     filein.close();
-    double pd0=0, pd1=0;
+    double pd0, pd1;
     while(true){
+        pd0=0;
     for (i=0; i<18; i++){
-        pd0 = pd0+(0.05 * (w0 + (w1 * x[i]) - y[i]));
+        pd0 = pd0+(0.055 * (w0 + (w1 * x[i]) - y[i]));
     };
+    pd1=0;
     for (i = 0; i < 18; i++) {
-        pd1 += 0.05 * (w0 + w1 * x[i] - y[i]) * x[i];
+        
+        pd1 += (0.055 * (w0 + (w1 * x[i]) - y[i])) * x[i];
     };
     w0 = w0-(alpha * pd0);
     w1 = w1-(alpha * pd1);
