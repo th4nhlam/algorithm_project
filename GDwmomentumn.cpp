@@ -37,7 +37,7 @@ double gradient_descent(double learning_rate, double x0) {
             double y=pow(x0,2)+10*sin(x0);
             cout<<"Ket qua ymin bang pp Gradient Descent:"<<y<<endl;
             cout << "So lan lap GD:" <<i<<endl;
-
+            
             break;
         }
         temp = x0;
