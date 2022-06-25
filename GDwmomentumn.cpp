@@ -10,12 +10,12 @@ double Gdmomentum(double x0, double alpha,double beta, unsigned long int loops){
     int i=1;
     double x=x0;
     int k;
-    double v[loops];
-    v[0]=0;
+    double v=0;
+    
     while (i<=loops && derivative(x)>=0.001||derivative(x)<0){
         k=i-1;
-        v[i]=beta*v[k]+alpha*derivative(x);
-        x=x-v[i];
+        v=beta*v+alpha*derivative(x);
+        x=x-v;
         i++;
 
     };
