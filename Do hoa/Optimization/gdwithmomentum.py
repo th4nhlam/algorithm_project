@@ -28,7 +28,7 @@ def animate(i):
 
 	# Gradient descent
 	v_est = b*v_est + a * fd(x_est)
-	x_est= x - v_est
+	x_est= x_est - v_est
 	y_est = f(x_est)
 
 	# Update the plot
